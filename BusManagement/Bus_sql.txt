@@ -1,0 +1,84 @@
+Create database bus;
+use bus;
+
+CREATE TABLE BusTable(
+  
+`BId` INT NOT NULL AUTO_INCREMENT,
+ 
+ `Name` VARCHAR(100) NOT NULL,
+ 
+ `Number` VARCHAR(100) NOT NULL,
+ 
+ `Type` VARCHAR(100) NOT NULL,
+ `RId` VARCHAR(20) NOT NULL,
+ `Make` VARCHAR(50) NOT NULL,
+
+ `Model` VARCHAR(50) NOT NULL,
+
+ `seats` VARCHAR(10) NOT NULL,
+
+ `DId`VARCHAR(10) NOT NULL,
+
+ `CId`VARCHAR(10) NOT NULL,
+
+  PRIMARY KEY (`BId`));
+
+CREATE TABLE IF NOT EXISTS StationTable( 
+`Id` INT NOT NULL AUTO_INCREMENT,
+ 
+`Scode` Varchar(20) NOT NULL,
+`Station_Name` Varchar(100), 
+Key(`Scode`),
+ PRIMARY KEY (`Id`));
+
+
+
+
+CREATE TABLE `RouteTable` (
+  
+ `Id` INT NOT NULL AUTO_INCREMENT,
+ 
+ `RId` Int Not Null,
+ `Station_Code` VARCHAR(100),
+ `Dist_From_Src` VARCHAR(100),
+ `Arr_Time` VARCHAR(100),
+ `Depart_Time` VARCHAR(100),
+  PRIMARY KEY (`Id`),
+INDEX par_ind (Station_Code),
+  CONSTRAINT fk_RouteTable FOREIGN KEY (Station_Code)
+  	REFERENCES StationTable (SCode)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE
+) ENGINE=INNODB;
+
+
+CREATE TABLE EmployeeTabLE (
+`EId` INT NOT NULL AUTO_INCREMENT,
+`Name` Varchar(100), 
+`Designation`  Varchar(100), 
+`BId`  Int Not Null default 0,
+PRIMARY KEY (`EId`));
+
+
+
+CREATE TABLE `tickettable` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Bus_Number` varchar(100) NOT NULL,
+  `Src` varchar(45) NOT NULL,
+  `Dest` varchar(45) NOT NULL,
+  `TotalFare` double NOT NULL DEFAULT '0',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB;
+
+
+
+CREATE TABLE `passengertable` (
+  `TicketId` int(11) DEFAULT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `Age` varchar(50) DEFAULT NULL,
+  `Gender` varchar(50) DEFAULT NULL,
+  KEY `par_ind` (`TicketId`),
+  CONSTRAINT `fk_ticketTable` FOREIGN KEY (`TicketId`) REFERENCES `tickettable` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+

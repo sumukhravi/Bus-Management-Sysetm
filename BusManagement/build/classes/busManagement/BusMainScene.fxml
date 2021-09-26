@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="busManagement.MainSceneController">
+   <center>
+      <AnchorPane id="AnchorPane" prefHeight="643.0" prefWidth="950.0">
+         <children>
+            <ImageView fitHeight="686.0" fitWidth="950.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/full-charter-bus3.png" />
+               </image>
+            </ImageView>
+            <TabPane fx:id="mainPage" layoutX="207.0" layoutY="128.0" prefHeight="643.0" prefWidth="950.0" tabClosingPolicy="UNAVAILABLE" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                  <Tab text="Bus Details">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.20915032679738563" orientation="VERTICAL" prefHeight="614.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <items>
+                                    <GridPane prefHeight="208.0" prefWidth="948.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="30.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="460.0" minWidth="0.0" prefWidth="153.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="30.0" prefWidth="108.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="175.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="30.0" prefWidth="95.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="0.0" prefWidth="148.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="163.0" />
+                                          <ColumnConstraints />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Bus Name: " GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Bus No.: ">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Bus Type: " GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="No of Seats: " GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="addBusBtn" mnemonicParsing="false" onAction="#addBus" prefHeight="31.0" prefWidth="199.0" text="Add Bus" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                                          <TextField fx:id="bName" onAction="#reqSrc" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="bNum" onAction="#reqBName" GridPane.columnIndex="1" />
+                                          <TextField fx:id="seatNum" prefHeight="25.0" prefWidth="137.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
+                                          <Button fx:id="bUpdateBtn" mnemonicParsing="false" onAction="#updateB" prefHeight="25.0" prefWidth="132.0" text="Update" GridPane.columnIndex="2" />
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Make : " GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Model : " GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Conductor: " GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Driver: " GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="bMake" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <TextField fx:id="bModel" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <TextField fx:id="bType" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="cDriver" prefHeight="25.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="cConductor" prefHeight="25.0" prefWidth="206.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Choose Route:" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cRoute" prefHeight="25.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="warnMsg" prefHeight="32.0" prefWidth="657.0" textFill="RED" GridPane.columnIndex="4" GridPane.columnSpan="4">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane prefHeight="110.0" prefWidth="950.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.29797979797979796" prefHeight="398.0" prefWidth="948.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                                <SplitPane dividerPositions="0.42291666666666666" orientation="VERTICAL">
+                                                   <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                         <children>
+                                                            <GridPane prefHeight="235.0" prefWidth="279.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                              </columnConstraints>
+                                                              <rowConstraints>
+                                                                <RowConstraints maxHeight="127.0" minHeight="0.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="264.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="264.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                                                              </rowConstraints>
+                                                               <children>
+                                                                  <Label prefHeight="31.0" prefWidth="281.0" text="Bus Route Creator " GridPane.columnSpan="2">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Choose Station :" GridPane.rowIndex="2">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Arrival Time :" GridPane.rowIndex="4">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Departure Time :" GridPane.rowIndex="5">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="addRouteBtn" mnemonicParsing="false" onAction="#addRoute" prefHeight="25.0" prefWidth="128.0" text="Add Route" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                  <TextField fx:id="arT" onAction="#reqDrt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                  <TextField fx:id="drT" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                  <ComboBox fx:id="cStation" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                  <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Distance from sorce :" GridPane.rowIndex="3">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <TextField fx:id="distSrc" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                  <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="158.0" text="Enter Route Id :" GridPane.rowIndex="1">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <TextField fx:id="rId" onAction="#getRoutes" prefHeight="25.0" prefWidth="129.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                  <Button fx:id="viewRouteBtn" mnemonicParsing="false" onAction="#viewRoute" prefHeight="25.0" prefWidth="128.0" text="View All Routes" GridPane.rowIndex="6" />
+                                                               </children>
+                                                            </GridPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TableView fx:id="rTableView" layoutX="40.0" layoutY="-3.0" prefHeight="281.0" prefWidth="279.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0" />
+                                                         </children></AnchorPane>
+                                                   </items>
+                                                </SplitPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <TableView fx:id="bTableView" layoutX="122.0" layoutY="109.0" prefHeight="479.0" prefWidth="661.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <contextMenu>
+                                                            <ContextMenu>
+                                                              <items>
+                                                                <MenuItem fx:id="tDeleteMenu" mnemonicParsing="false" onAction="#tMenuDelete" text="Delete" />
+                                                              </items>
+                                                            </ContextMenu>
+                                                         </contextMenu>
+                                                      </TableView>
+                                                   </children></AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Stations">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.20098039215686275" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <items>
+                                    <GridPane prefHeight="248.0" prefWidth="948.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="105.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="193.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="491.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="46.0" minHeight="7.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="237.0" text="Station Code :">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="237.0" text="Station Name :" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="sCode" onAction="#reqsName" prefHeight="25.0" prefWidth="237.0" GridPane.columnIndex="1" />
+                                          <TextField fx:id="sName" onAction="#aStation" prefHeight="25.0" prefWidth="237.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button fx:id="aStation" mnemonicParsing="false" onAction="#aStation" prefHeight="30.0" prefWidth="213.0" text="Add Station" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane prefHeight="336.0" prefWidth="948.0">
+                                       <children>
+                                          <TableView fx:id="stTableView" layoutX="282.0" layoutY="44.0" prefHeight="394.0" prefWidth="948.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Employee">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.20098039215686275" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <items>
+                                    <GridPane prefHeight="248.0" prefWidth="948.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="168.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="170.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="491.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="46.0" minHeight="7.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="237.0" text="Employee Name :">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="237.0" text="Role / Designation:" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="eName" prefHeight="25.0" prefWidth="237.0" GridPane.columnIndex="1" />
+                                          <Button fx:id="addEmpBtn" mnemonicParsing="false" onAction="#addEmp" prefHeight="30.0" prefWidth="213.0" text="Add Employee" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <ComboBox fx:id="empRole" prefHeight="21.0" prefWidth="224.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane prefHeight="336.0" prefWidth="948.0">
+                                       <children>
+                                          <TableView fx:id="empTableView" layoutX="282.0" layoutY="44.0" prefHeight="394.0" prefWidth="948.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Ticket Counter">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <items>
+                                    <GridPane prefHeight="614.0" prefWidth="950.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="37.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="84.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="89.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="85.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="82.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.66668701171875" minWidth="10.0" prefWidth="103.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="34.33331298828125" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="77.0" minHeight="6.9999847412109375" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="187.3333282470703" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="187.3333282470703" minHeight="8.0" prefHeight="13.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="157.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="183.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="183.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="425.33331298828125" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="425.33331298828125" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="425.33331298828125" minHeight="10.0" prefHeight="247.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="425.33331298828125" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="425.33331298828125" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="220.0" text="Name :" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="220.0" text="Age :" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="220.0" text="Gender :" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="pName" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                                          <ComboBox fx:id="pGender" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                          <Button fx:id="addPassengerBtn" mnemonicParsing="false" onAction="#addPassenger" prefHeight="27.0" prefWidth="161.0" text="Add Passenger" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font name="Microsoft YaHei Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="pAge" maxWidth="-Infinity" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                          <TableView fx:id="addPTableView" prefHeight="289.0" prefWidth="412.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="9" />
+                                          <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="147.0" text="Create Ticket " GridPane.columnIndex="1" GridPane.columnSpan="5">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="220.0" text="Bus No. :" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="220.0" text="Src : " GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="220.0" text="Dest :" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="171.0" text="Passenger Details :" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cBNum" onAction="#getFare" prefHeight="25.0" prefWidth="166.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                                          <ComboBox fx:id="cSrc" onAction="#getBuses" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="cDest" onAction="#getBuses" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                          <Button fx:id="cSubmitBtn" mnemonicParsing="false" onAction="#createTicket" prefHeight="36.0" prefWidth="189.0" text="Submit" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="10">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label prefHeight="36.0" prefWidth="97.0" text="Total Fare " GridPane.columnIndex="5" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="cFare" prefHeight="36.0" prefWidth="97.0" GridPane.columnIndex="5" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tWarnMsg" prefHeight="73.0" prefWidth="185.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="3" />
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.22295081967213115" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <items>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <GridPane layoutX="51.0" layoutY="29.0" prefHeight="133.0" prefWidth="469.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="196.0" text="Search Ticket:" GridPane.columnSpan="2">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="196.0" text="Enter Ticket Number :" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="cTicketNum" onAction="#getTickets" prefHeight="31.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <Button mnemonicParsing="false" onAction="#getTickets" prefHeight="32.0" prefWidth="120.0" text="Search" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font name="Microsoft YaHei Bold" size="14.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                                <TableView fx:id="sTicketTableView" prefHeight="459.0" prefWidth="469.0">
+                                                   <contextMenu>
+                                                      <ContextMenu>
+                                                         <items>
+                                                            <MenuItem mnemonicParsing="false" onAction="#deleteTicket" text="Delete Ticket" />
+                                                         </items>
+                                                      </ContextMenu>
+                                                   </contextMenu>
+                                                </TableView>
+                                             </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <AnchorPane fx:id="loginPage" layoutY="100.0" style="-fx-background-color: #00ffff;" AnchorPane.leftAnchor="20.0">
+               <children>
+                  <GridPane prefHeight="249.0" prefWidth="259.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="146.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="27.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="197.0" minHeight="10.0" prefHeight="146.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="130.0" text="User Name :" textFill="#e83939" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="130.0" text="Password :" textFill="#c60ea7" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="loginMsg" alignment="CENTER" prefHeight="89.0" prefWidth="317.0" text="Enter the user Name and Password" textFill="#500ef8" GridPane.columnSpan="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="uName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <PasswordField fx:id="pass" onAction="#login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" onAction="#login" prefHeight="31.0" prefWidth="125.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="92.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="90.0" prefWidth="950.0" AnchorPane.rightAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="NEVER" maxWidth="338.0" minWidth="10.0" prefWidth="338.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="669.0" minWidth="10.0" prefWidth="383.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="669.0" minWidth="10.0" prefWidth="295.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="34.0" prefWidth="395.0" style="-fx-background-color: #1f1f1f;" text="Bus Management Project" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="logOutBtn" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="132.0" stylesheets="@../../../RailManagement/src/railmanagement/style.css" text="Log Out " visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
